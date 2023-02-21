@@ -2,19 +2,34 @@ import logo from './logo.svg';
 import './App.css';
 
 const number = 666;
-const singer = {name: "dr mahfuz", job:"singer"};
-const singer2 = {name: "eva rahman", job:"singer2"};
+const singers = [
+  {name: "dr mahfuz", job:"singer"},
+  {name: "eva rahman", job:"singer2"},
+  {name: "agun", job:"shopno"},
+  {name: "shuvro", job:"pathor"}];
 const singerStyle = {
   color: "purple",
   backgroundColor: "white",
 }
 
 function App() {
+  const nayoks = ["rubel ", "bapparaj ","kuber ", "jashim ", "salman shah", "riyaz", "anwar"];
   return (
    <div className = "App">
-    <Person name="rubel" nayika ="mousumi" ></Person>
-    <Person name = "bapparaj" naika ="cheka"></Person>
-    <Person name = "kuber" naika = "kopila"></Person>
+    {
+      nayoks.map(nayok=><li>Name: {nayok}</li>)
+    }
+    {/* {
+      nayoks.map(nayok=><Person name={nayok}></Person>)
+    } */}
+
+    {
+      singers.map(singer=><Person name={singer.name}></Person>)
+    }
+
+    {/* <Person name={nayoks[0]} nayika ="mousumi" ></Person>
+    <Person name = {nayoks[1]} naika ="cheka"></Person>
+    <Person name = {nayoks[2]} naika = "kopila"></Person> */}
     
     <Friend movie ="shingam" phone ="01293"></Friend>
     <Friend phone ="01532"></Friend>
@@ -27,8 +42,8 @@ function Person(props){
   console.log(props);
   return (
    <div className="person">
-     <h1>nayok: {props.name}</h1>
-     <p>naika: {props.naika}</p>
+     <h1>{props.name}</h1>
+     <p> {props.naika}</p>
    </div>
   )
 }
