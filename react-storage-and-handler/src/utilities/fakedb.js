@@ -38,8 +38,12 @@ const removeFromDb = id =>{
 
    //console.log("inside fakedb",id);
 }
+const deleteShoppingCart= () =>{
+    localStorage.removeItem("shopping-cart");
+}
 
 export {
     addToDb,
-    removeFromDb
+    removeFromDb,
+    deleteShoppingCart
     };
